@@ -238,6 +238,7 @@
 				6D38A1CB1FFE0E1C00D3DE1C /* Resources */,
 				D80236B4915DB4211F8D42B0 /* [CP] Embed Pods Frameworks */,
 				F5608487714181E080F74BE6 /* [CP] Copy Pods Resources */,
+				6DCEAB98200F04F400B31836 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -365,6 +366,19 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FoodTrackerTests/Pods-FoodTrackerTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		6DCEAB98200F04F400B31836 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which \"${PODS_ROOT}/SwiftLint/swiftlint\" >/dev/null; then\n  \"${PODS_ROOT}/SwiftLint/swiftlint\"\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
 		};
 		7E7AED7ECE02E1055000D2DF /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;

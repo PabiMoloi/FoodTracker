@@ -1,11 +1,11 @@
 class MealService {
-    //MARK: - Properties
+    // MARK: - Properties
     private var mealApi: MealApi
-    
+
     init(mealApi: MealApi) {
         self.mealApi = mealApi
     }
-    
+
     func loadMeals() -> [Meal]? {
         return mealApi.loadMeals()
     }
@@ -18,7 +18,7 @@ class MealService {
             mealApi.saveMeals(meals: [meal])
         }
     }
-    
+
     func deleteMeal(at index: Int) {
         guard var meals = mealApi.loadMeals() else {
             fatalError("Unexpected deletiton of meal")
@@ -27,12 +27,12 @@ class MealService {
         meals.remove(at: index)
         mealApi.saveMeals(meals: meals)
     }
-    
+
     func updateMeal(at index: Int, meal: Meal) {
         guard var meals = mealApi.loadMeals() else {
             fatalError("Unexpected update operation of meal")
         }
-        
+
         meals[index] = meal
         mealApi.saveMeals(meals: meals)
     }

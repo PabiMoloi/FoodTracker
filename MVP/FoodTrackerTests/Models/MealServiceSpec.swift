@@ -14,7 +14,7 @@ class MealApiMock: MealApi {
             Meal(name: "orange", photo: nil, rating: 3)!
         ]
     }
-    
+
     override func saveMeals(meals: [Meal]) {
         receivedMeals = meals
         super.saveMeals(meals: meals)
@@ -31,7 +31,7 @@ class MealServiceSpec: QuickSpec {
                 mealApiMock = MealApiMock()
                 mealService = MealService(mealApi: mealApiMock)
             }
-            
+
             describe("addMeal") {
                 it("appends a new meal") {
                     let newMeal = Meal(name: "strawberry", photo: nil, rating: 4)!
@@ -40,7 +40,7 @@ class MealServiceSpec: QuickSpec {
                     expect(mealApiMock.receivedMeals?.count).to(equal(4))
                 }
             }
-            
+
             describe("deleteMeal") {
                 it("removes a meal") {
                     mealService.deleteMeal(at: 1)
