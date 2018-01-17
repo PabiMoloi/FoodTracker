@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MealViewController" customModule="FoodTracker" customModuleProvider="target">
+            <connections>
+                <outlet property="nameTextField" destination="LYJ-vm-HdO" id="Tpx-A3-zeG"/>
+                <outlet property="photoImageView" destination="Xtw-AL-yqt" id="4js-Sf-FhP"/>
+                <outlet property="ratingControl" destination="AdO-re-OaD" id="Vqn-Ws-FgM"/>
+                <outlet property="tapGesture" destination="rqw-97-K32" id="Hzs-bG-BEL"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="HQ4-VX-P9B">
+                    <rect key="frame" x="0.0" y="40" width="375" height="410"/>
+                    <subviews>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter meal name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LYJ-vm-HdO">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="30"/>
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                        </textField>
+                        <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="320" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="Xtw-AL-yqt">
+                            <rect key="frame" x="27.5" y="38" width="320" height="320"/>
+                            <gestureRecognizers/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="Xtw-AL-yqt" secondAttribute="height" multiplier="1:1" id="JfQ-Lj-tbW"/>
+                            </constraints>
+                            <connections>
+                                <outletCollection property="gestureRecognizers" destination="rqw-97-K32" appends="YES" id="cAX-li-m26"/>
+                            </connections>
+                        </imageView>
+                        <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="AdO-re-OaD" customClass="RatingControl" customModule="FoodTracker" customModuleProvider="target">
+                            <rect key="frame" x="61.5" y="366" width="252" height="44"/>
+                        </stackView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="LYJ-vm-HdO" secondAttribute="trailing" id="kBj-Xv-clT"/>
+                    </constraints>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="HQ4-VX-P9B" firstAttribute="top" secondItem="M4E-FQ-req" secondAttribute="top" constant="20" id="Y2p-su-SqO"/>
+                <constraint firstItem="M4E-FQ-req" firstAttribute="trailing" secondItem="HQ4-VX-P9B" secondAttribute="trailing" id="lnN-dA-kcw"/>
+                <constraint firstItem="HQ4-VX-P9B" firstAttribute="leading" secondItem="M4E-FQ-req" secondAttribute="leading" id="pOG-b8-AFM"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="M4E-FQ-req"/>
+            <point key="canvasLocation" x="33.5" y="53.5"/>
+        </view>
+        <tapGestureRecognizer id="rqw-97-K32"/>
+    </objects>
+    <resources>
+        <image name="defaultPhoto" width="540" height="540"/>
+    </resources>
+</document>
